@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Result Box</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: burlywood;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 300px;
+      background-color: chocolate;
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+    }
+
+    input {
+      padding: 10px;
+      width: 80%;
+      margin: 10px auto;
+    }
+
+    button {
+      padding: 5px 15px;
+      background-color: white;
+      color: chocolate;
+      border: none;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 15px;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Result</h1>
+    <input type="text" id="v1" placeholder="Enter roll number" /><br />
+    <button onclick="Marks()">Check</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function Marks() {
+      var a = document.getElementById("v1").value;
+      var result = "";
+
+      switch (a) {
+  case '1': result = "Name: Rajesh<br>Marks: 65%<br>Division: Third"; break;
+  case '2': result = "Name: Mohan<br>Marks: 55%<br>Division: Fourth"; break;
+  case '3': result = "Name: Sunil<br>Marks: 85%<br>Division: First"; break;
+  case '4': result = "Name: Raj<br>Marks: 95%<br>Division: First"; break;
+  case '5': result = "Name: Ramesh<br>Marks: 50%<br>Division: Fifth"; break;
+  case '6': result = "Name: Sneha<br>Marks: 78%<br>Division: Second"; break;
+  case '7': result = "Name: Amit<br>Marks: 60%<br>Division: Third"; break;
+  case '8': result = "Name: Priya<br>Marks: 92%<br>Division: First"; break;
+  case '9': result = "Name: Neha<br>Marks: 47%<br>Division: Fifth"; break;
+  case '10': result = "Name: Arjun<br>Marks: 88%<br>Division: First"; break;
+  case '11': result = "Name: Karan<br>Marks: 70%<br>Division: Second"; break;
+  case '12': result = "Name: Meena<br>Marks: 66%<br>Division: Second"; break;
+  case '13': result = "Name: Aditya<br>Marks: 58%<br>Division: Third"; break;
+  case '14': result = "Name: Tanya<br>Marks: 90%<br>Division: First"; break;
+  case '15': result = "Name: Deepak<br>Marks: 62%<br>Division: Third"; break;
+  case '16': result = "Name: Anjali<br>Marks: 75%<br>Division: Second"; break;
+  case '17': result = "Name: Varun<br>Marks: 80%<br>Division: First"; break;
+  case '18': result = "Name: Ayesha<br>Marks: 83%<br>Division: First"; break;
+  case '19': result = "Name: Rohit<br>Marks: 68%<br>Division: Second"; break;
+  case '20': result = "Name: Divya<br>Marks: 52%<br>Division: Fourth"; break;
+  case '21': result = "Name: Pooja<br>Marks: 86%<br>Division: First"; break;
+  case '22': result = "Name: Suraj<br>Marks: 61%<br>Division: Third"; break;
+  case '23': result = "Name: Alok<br>Marks: 74%<br>Division: Second"; break;
+  case '24': result = "Name: Komal<br>Marks: 69%<br>Division: Second"; break;
+  case '25': result = "Name: Ishaan<br>Marks: 95%<br>Division: First"; break;
+  case '26': result = "Name: Kavita<br>Marks: 59%<br>Division: Third"; break;
+  case '27': result = "Name: Manish<br>Marks: 77%<br>Division: Second"; break;
+  case '28': result = "Name: Ritu<br>Marks: 64%<br>Division: Third"; break;
+  case '29': result = "Name: Suresh<br>Marks: 83%<br>Division: First"; break;
+  case '30': result = "Name: Nisha<br>Marks: 71%<br>Division: Second"; break;
+  case '31': result = "Name: Arpita<br>Marks: 87%<br>Division: First"; break;
+  case '32': result = "Name: Harsh<br>Marks: 49%<br>Division: Fifth"; break;
+  case '33': result = "Name: Zoya<br>Marks: 91%<br>Division: First"; break;
+  case '34': result = "Name: Vikas<br>Marks: 53%<br>Division: Fourth"; break;
+  case '35': result = "Name: Ritika<br>Marks: 76%<br>Division: Second"; break;
+  case '36': result = "Name: Farhan<br>Marks: 68%<br>Division: Second"; break;
+  case '37': result = "Name: Payal<br>Marks: 82%<br>Division: First"; break;
+  case '38': result = "Name: Abhishek<br>Marks: 56%<br>Division: Fourth"; break;
+  case '39': result = "Name: Sana<br>Marks: 79%<br>Division: Second"; break;
+  case '40': result = "Name: Dev<br>Marks: 66%<br>Division: Second"; break;
+  case '41': result = "Name: Raghav<br>Marks: 73%<br>Division: Second"; break;
+  case '42': result = "Name: Juhi<br>Marks: 84%<br>Division: First"; break;
+  case '43': result = "Name: Akash<br>Marks: 50%<br>Division: Fifth"; break;
+  case '44': result = "Name: Swati<br>Marks: 63%<br>Division: Third"; break;
+  case '45': result = "Name: Naveen<br>Marks: 89%<br>Division: First"; break;
+  case '46': result = "Name: Ishita<br>Marks: 72%<br>Division: Second"; break;
+  case '47': result = "Name: Yash<br>Marks: 67%<br>Division: Second"; break;
+  case '48': result = "Name: Sakshi<br>Marks: 94%<br>Division: First"; break;
+  case '49': result = "Name: Gaurav<br>Marks: 54%<br>Division: Fourth"; break;
+  case '50': result = "Name: Bhavna<br>Marks: 81%<br>Division: First"; break;
+  default:
+    result = "Invalid Data";
+}
+
+      document.getElementById("output").innerHTML = result;
+    }
+  </script>
+</body>
+</html>

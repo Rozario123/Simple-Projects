@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>toggle-button</title>
+</head>
+<style>
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}    
+body{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    transition: 0.3s;
+}
+body.dark{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+body.light{
+    
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20%;
+    padding: 25px;
+    gap: 15px;
+   
+}
+.button{
+    background-color: rgb(242, 244, 232);
+    width: 200px;
+    height: 100px;
+    border-radius: 200px;
+    cursor: pointer;
+    position:relative;
+     box-shadow: 1px 1px 2px 5px grey;
+ 
+}
+.button::before{
+    position: absolute;
+    content: '';
+    width: 90px;
+    height: 90px;
+    background-color: rgb(113, 109, 109);
+    border-radius: 200px;
+    margin: 5px;
+    transition: 0.4s;
+}
+input:checked+.button{
+    background-color: rgb(0, 0, 0) ;
+}
+input:checked+.button::before{
+    transform: translateX(100px);
+    background-color: rgb(255, 255, 255) ;
+}
 
+input{
+    display: none;
+}
+</style>
+<body id="main" class="light">
+<div class="container"><h1>Toggle-Button</h1>
+<input type="checkbox" id="check">
+<label for="check" class="button" ></label>
+<script>
+    const checkbox = document.getElementById('check');
+    const body = document.getElementById('main');
+
+    checkbox.addEventListener('change', function () {
+        if( checkbox.checked){
+            body.classList.remove('light');
+        }else{
+body.classList.remove('Dark');
+body.classList.add('light');
+            }
+            
+        });
+        
+
+
+    
+</script>
+</div>    
+</body>    
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <title>CLOCK</title>
+</head>
+<style>
+    body{
+        display: flex;
+        background-color: rgb(4, 3, 3);
+        justify-content: center;
+}
+    .container{
+        width: 400px;
+        height: 120px;
+        margin-top: 20%;
+        background-color: rgba(250, 228, 26, 0.694);;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.131);
+        border-radius: 15px;
+}
+      .clock{
+        width: 100%;
+        text-align: center;
+        font-size: 45px;
+        padding-top: 15px;
+      
+        text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+        color: white;
+        font-weight: bold;
+      }
+       .day{
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+         color: white;
+         text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+      }
+ 
+</style>
+<body>
+<div class="container">
+    <div class="clock">00:00:00</div>
+    <div class="day">Day, Month-Date, Year </div>
+</div>
+<script>
+   function uploadClock() {
+    const now = new Date();
+
+    // TIME FORMAT
+    let hour = String(now.getHours()).padStart(2, '0');
+    let minutes = String(now.getMinutes()).padStart(2, '0');
+    let seconds = String(now.getSeconds()).padStart(2, '0');
+    let amPm = hour >= 12 ? 'PM' : 'AM';
+
+    // CHANGE FORMAT INTO 12 HOUR
+    hour = hour % 12;
+    hour = hour ? hour : 12;
+
+    let time = `${hour}:${minutes}:${seconds} ${amPm}`;
+    document.getElementsByClassName('clock')[0].textContent = time;
+
+    let option = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    let dateStr = now.toLocaleDateString('en-US', option);
+    document.getElementsByClassName('day')[0].textContent = dateStr;
+}
+
+uploadClock();
+setInterval(uploadClock, 1000);
+</script>
+</body>
+</html>
